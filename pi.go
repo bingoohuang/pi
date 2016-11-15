@@ -8,7 +8,7 @@ import (
 func main() {
 	var iter float64 = 1000000
 	fmt.Printf("Estimating π using %.0f iterations\n", iter)
-	π := leibnizFormulaforπ(iter)
+	π := leibnizπ(iter)
 	absoluteError, relativeError, percentError := errorCalculation(π)
 	fmt.Println("π:              ", π)
 	fmt.Println("math.Pi:        ", math.Pi)
@@ -24,7 +24,7 @@ func errorCalculation(π float64) (float64, float64, float64) {
 	return absoluteError, relativeError, percentError
 }
 
-func leibnizFormulaforπ(iter float64) float64 {
+func leibnizπ(iter float64) float64 {
 	var sum, i float64 = 0, 0
 	for ; i < iter; i++ {
 		sum += math.Pow(-1, i) / (2*i + 1)
